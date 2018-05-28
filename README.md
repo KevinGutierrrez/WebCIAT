@@ -1,1 +1,1 @@
-# dise-oWebCiat
+Para la implementacion del proyecto se definio guardar los datos del usuario en un archivo ".txt" para su posterior ediccion
