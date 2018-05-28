@@ -1,0 +1,237 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+#Content{
+    width: 100%;
+}
+
+#ContentUsers{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#ListUsers{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.UserInterface{
+    
+    border-bottom: 2px solid #d9d9d9;
+    border-right: 2px solid #d9d9d9;;
+    border-top: 2px solid #d9d9d9;
+    height: 10%;
+    margin-bottom: 5px;
+}
+
+#ButtonAddUser{
+    margin-left: 70%;
+}
+
+#ButtonEditUser{
+    margin-top: 7%;
+    margin-bottom: 5%;
+    margin-right: 5%; 
+}
+
+#PencilIcon{
+    margin-right: 14px;
+   
+}
+
+.containerUserInterface{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.containerName{
+    width: 100%;
+    font-size: 150%;
+    color: #0091FF;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.containerButtonEdit{
+    width: 20%;
+}
+
+.NumberinListUsers{
+    font-size: 20px;
+}
+
+
+.contentHeaderUsers{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px black;
+}
+
+.contentNameUsers{
+    width: 90%;
+    font-size: 150%;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: #0091FF;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    border-bottom: 2px #0091FF solid;
+}
+
+.contentButtonUsers{
+    align-items: flex-end;
+    width: 10%;
+}
+
+.DeleteUser{
+    border-radius: 0px 0px 0px 5px;
+    width: 60%;
+    height: 55%;
+    color: white;
+    font-weight: bold;
+    background-color: #d5504c;
+    border-color: #d5504c;
+    font-size: 100%;
+}
+
+.contentFirstName{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.contentLastName{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.contentNameForm{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+
+.contentcontactForm{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+
+.contentEmail{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.Username{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+input{
+    margin: 1%;
+}
+
+.contentRoleAndActive{
+    display: flex;
+    flex-direction: row;
+}
+
+.contentRoleUsers{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-right: 5%;
+    margin-top: 4%;
+    width: 40%;
+    color: black;
+    
+    
+}
+
+.contentActive{
+  display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin-right: 10%;
+    margin-top: 4%;
+    width: 40%;
+    color: black;
+    
+}
+
+.contentAnswer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.direccionRoleUsers{
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+
+.textcheckBox{
+    font-weight: normal;
+    margin-left: 7px;
+}
+
+.direccionAnswer{
+    margin-left: 15px;
+}
+
+.BtnSaveChanges{
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-bottom: 3%;
+    color: white;
+    background-color: #0091FF;
+    border-radius: 2px;
+    border-bottom: 2px #0091FF solid;
+    width: 10%;
+    height: 5%;
+}
+
+#endForm{
+    display: flex;
+    direction: row;
+}
+
+.spaceEndForm{
+    margin: 5%;
+}

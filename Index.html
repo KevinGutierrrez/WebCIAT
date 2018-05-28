@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Frontend Test</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+    <div id="Content">
+
+        <div id="ContentUsers">
+            <div id="ListUsers">
+
+                <ol class='NumberinListUsers'>
+                    
+                </ol>
+
+            </div>
+
+
+            <div id="ButtonContent">
+                <button id="ButtonAddUser" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >Add New User</button>
+            </div>
+        </div>
+
+    </div>
+    
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                 <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Create User</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <Form>
+                                
+                                <div class="form-group">
+                                    <label for="name">First name:</label>
+                                    <input type="text" class="form-control" name="First name" id="Firstname" placeholder="First name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="lastName">Last name:</label>
+                                    <input type="text" class="form-control" name="Last name" id="Lastname" placeholder="Last name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" name="email" id="Email" placeholder="Email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="username">Username:</label>
+                                    <input type="text" class="form-control" name="username" id="Username" placeholder="Username" required>
+                                </div>
+                                <div id="endForm">
+                                    <div class="spaceEndForm">
+                                        <label>Role:</label>
+                                        <div class="direccionRoleUsers">
+                                            <input class="form-check-input" id="Administrador" type="checkbox" name="Administrador" value="Administrador">
+                                            <label class="textcheckBox" for="Administrador">Administrador</label>
+                                        </div>
+                                    
+                                        <div class="direccionRoleUsers">
+                                            <input class="form-check-input" id="Member" type="checkbox" name="Member" value="Member">
+                                            <label class="textcheckBox" for="Member">Member</label>
+                                    
+                                        </div>
+                                    
+                                        <div class="direccionRoleUsers">
+                                            <input class="form-check-input" id="Contributor" type="checkbox" name="Contributor" value="Contributor">
+                                            <label class="textcheckBox" for="Contributor">Contributor</label>
+                                        </div>
+
+                                    </div>
+                                
+                                    <div class="spaceEndForm">
+                                        <label for="Active">User active</label>
+                                        <div class="contentAnswer">
+                                    
+                                         <div>
+                                                <input type="radio" name="Yes" value="Yes" id="Yes">
+                                                <label class="textcheckBox" for="defaultCheck10">Yes</label>
+                                            </div>
+                                    
+                                            <div class="direccionAnswer">
+                                                <input type="radio" name="No" value="No" id="No">
+                                                <label class="textcheckBox" for="defaultCheck10">No</label>
+                                            </div>
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                            <button type="submit" id="CrearUsuario" class="btn btn-primary">Create</button>
+                        </Form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        
+   <script>
+    /*
+        $(document).ready(function () {
+            $("#ButtonAddUser").click(function () {
+                $("ol").append("<li><div class='UserInterface'><div class='containerUserInterface'><div class='containerName'>nombre</div><div class='containerButtonEdit'><button id='ButtonEditUser' class='btn btn-warning'><span class='glyphicon glyphicon-pencil' id='PencilIcon'></span>Edit</button></div></div></div></li>");
+            });
+
+            
+            
+            $(this).click(function () {
+                alert(this);
+            });
+        });
+    */  
+
+        function download(filename, text) {
+                var element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                element.setAttribute('download', filename);
+
+                element.style.display = 'none';
+                document.body.appendChild(element);
+
+                element.click();
+
+                document.body.removeChild(element);
+            }
+
+            // Start file download.
+            document.getElementById("CrearUsuario").addEventListener("click", function () {
+                // Generate download of hello.txt file with some content
+                var Fristname = document.getElementById("Firstname").value;
+                var Lastname = document.getElementById("Lastname").value;
+                var Email = document.getElementById("Email").value;
+                var Username = document.getElementById("Username").value;
+                var Administrador = document.getElementById("Administrador").value; 
+                var Member = document.getElementById("Member").value;
+                var Contributor = document.getElementById("Contributor").value;
+                var yes = $("input[type='radio'][name=Yes]:checked").val();
+                var no = $("input[type='radio'][name=No]:checked").val();
+                var Role;
+                var Active;
+                
+                /*if (Administrador.checked == true) {
+                    Role = "Administrador";   
+                } else {
+                    if (Member.checked == true) {
+                        Role = "Member";
+                    } else {
+                        if (Contributor.checked == true) {
+                            Role = "Contributor"
+                        } else {
+                            alert("Please select anything")
+                        }      
+                    }
+                }*/
+                
+
+                if (yes == undefined && no == undefined) {
+                    alert("Please select anything");
+                }else{
+                    if (yes == 'Yes') {
+                        Active = yes;
+                    } else {
+                        if (no = 'No') {
+                            Active = no;
+                        }
+                    }
+                } 
+                var text = Fristname + ',' + Lastname + ',' + Email + ',' + Username + ',' + Role+','+Active+',';
+                var filename = "Lista de usuarios.txt"; 
+                 
+                
+                download(filename, text);              
+
+                
+            }, false);
+       
+
+    </script>
+
+
+</body>
+</html>
