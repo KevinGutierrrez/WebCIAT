@@ -132,7 +132,7 @@
                 var element = document.createElement('a');
                 element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
                 element.setAttribute('download', filename);
-
+                
                 element.style.display = 'none';
                 document.body.appendChild(element);
 
@@ -220,7 +220,7 @@
                             if ($('.containerName').text().includes(NombreCompleto) == true) {
                                 console.log("no lo cree");
                             } else {
-                                download(filename, text);
+                                download(filename, newAndOldText);
                                 $("ol").append("<li><div class='UserInterface'><div class='containerUserInterface'><div class='containerName'>" + NombreCompleto + "</div><div class='containerButtonEdit'><button id='ButtonEditUser' class='btn btn-warning'><span class='glyphicon glyphicon-pencil' id='PencilIcon'></span>Edit</button></div></div></div></li>");
                                 $("#Firstname").val("");
                                 $("#Lastname").val("");
@@ -240,7 +240,7 @@
     $('#ButtonEditUser').click(function () {
             alert("entro.");
         });
-        
+
     </script>
     <script src="./JS/LeerArchivo.js"></script>
     

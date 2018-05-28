@@ -21,7 +21,7 @@ function traerArchivo() {
             var nombreCompleto = nombreUsuario+" "+apellidoUsuario;
             console.log(partir[i]);
             var numerodeusuarios = partir.length/6;
-            if (numerodeusuarios<=1) {
+            
                 if (nombreCompleto=='nada undefined') {
                     console.log("no exist user");
                 }else{
@@ -36,9 +36,7 @@ function traerArchivo() {
                         }
                     }
                 }
-            } else {
-                
-            }        
+                  
         }
         
         traerArchivo();
