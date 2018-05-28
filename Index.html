@@ -142,6 +142,7 @@
             
             document.getElementById("CrearUsuario").addEventListener("click", function () {
                 
+                var ContenidoAnterior = dataFile;
                 var Fristname = document.getElementById("Firstname").value;
                 var Lastname = document.getElementById("Lastname").value;
                 var Email = document.getElementById("Email").value;
@@ -185,22 +186,52 @@
                 var text = Fristname + ',' + Lastname + ',' + Email + ',' + Username + ',' + Role+','+Active+',';
                 var filename = "Lista de usuarios.txt"; 
                  
-                if( Fristname!= "" && Lastname!="" && Email!="" && Username!="" && Active!=undefined && Role != undefined){
                 
-                download(filename, text);
-                $("ol").append("<li><div class='UserInterface'><div class='containerUserInterface'><div class='containerName'>" + NombreCompleto + "</div><div class='containerButtonEdit'><button id='ButtonEditUser' class='btn btn-warning'><span class='glyphicon glyphicon-pencil' id='PencilIcon'></span>Edit</button></div></div></div></li>");
-                $("#Firstname").val("");
-                $("#Lastname").val("");
-                $("#Email").val("");
-                $("#Username").val("");
-                Administrador.checked = false;
-                Member.checked = false;
-                Contributor.checked = false;
-                yes.checked = false;
-                no.checked = false;
-                }else{
-                    alert("Please complete all information");
+                if (ContenidoAnterior == "") {
+                    
+                    if (Fristname != "" && Lastname != "" && Email != "" && Username != "" && Active != undefined && Role != undefined) {
+
+                        if (($(".containerName").text()) == NombreCompleto) {
+                            console.log("dont create user")
+                        } else {
+                            if ($('.containerName').text().includes(NombreCompleto) == true) {
+                                console.log("The user exist");
+                            }else{
+                                download(filename, text);
+                                $("ol").append("<li><div class='UserInterface'><div class='containerUserInterface'><div class='containerName'>" + NombreCompleto + "</div><div class='containerButtonEdit'><button id='ButtonEditUser' class='btn btn-warning'><span class='glyphicon glyphicon-pencil' id='PencilIcon'></span>Edit</button></div></div></div></li>");
+                                $("#Firstname").val("");
+                                $("#Lastname").val("");
+                                $("#Email").val("");
+                                $("#Username").val("");
+                            }
+                        }
+                    } else {
+                        alert("Please complete all information");
+                    }
+                } else {
+                        if (Fristname != "" && Lastname != "" && Email != "" && Username != "" && Active != undefined && Role != undefined) {
+                        var newAndOldText = ContenidoAnterior + Fristname + ',' + Lastname + ',' + Email + ',' + Username + ',' + Role + ',' + Active + ',';
+                        
+                        if (($(".containerName").text()) == NombreCompleto) {
+                                console.log("The user exist")
+                            } else {
+                            if ($('.containerName').text().includes(NombreCompleto) == true) {
+                                console.log("no lo cree");
+                            } else {
+                                download(filename, text);
+                                $("ol").append("<li><div class='UserInterface'><div class='containerUserInterface'><div class='containerName'>" + NombreCompleto + "</div><div class='containerButtonEdit'><button id='ButtonEditUser' class='btn btn-warning'><span class='glyphicon glyphicon-pencil' id='PencilIcon'></span>Edit</button></div></div></div></li>");
+                                $("#Firstname").val("");
+                                $("#Lastname").val("");
+                                $("#Email").val("");
+                                $("#Username").val("");
+                            }
+                        }
+                            
+                    } else {
+                        alert("Please complete all information");
+                    }
                 }
+
                 
             }, false);
        

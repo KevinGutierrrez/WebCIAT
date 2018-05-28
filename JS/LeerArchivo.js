@@ -21,12 +21,23 @@ function traerArchivo() {
             var nombreCompleto = nombreUsuario+" "+apellidoUsuario;
             console.log(partir[i]);
             var numerodeusuarios = partir.length/6;
-            if (numerodeusuarios>1) {
-
-                $("ol").remove("li");
-               
+            if (numerodeusuarios<=1) {
+                if (nombreCompleto=='nada undefined') {
+                    console.log("no exist user");
+                }else{
+                    if (($(".containerName").text())==nombreCompleto){
+                        console.log("dont create user")
+                    }else{
+                        if($('.containerName').text().includes(nombreCompleto)==true){
+                            console.log("User Exist");
+                            
+                        }else{
+                            $("ol").append("<li><div class='UserInterface'><div class='containerUserInterface'><div class='containerName'>" + nombreCompleto + "</div><div class='containerButtonEdit'><button id='ButtonEditUser' class='btn btn-warning'><span class='glyphicon glyphicon-pencil' id='PencilIcon'></span>Edit</button></div></div></div></li>");
+                        }
+                    }
+                }
             } else {
-                $("ol").append("<li><div class='UserInterface'><div class='containerUserInterface'><div class='containerName'>" + nombreCompleto + "</div><div class='containerButtonEdit'><button id='ButtonEditUser' class='btn btn-warning'><span class='glyphicon glyphicon-pencil' id='PencilIcon'></span>Edit</button></div></div></div></li>");
+                
             }        
         }
         
