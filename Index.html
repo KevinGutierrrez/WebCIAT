@@ -54,8 +54,7 @@
                     </div>
                     <div class="modal-body">
                         
-                        <Form>
-                                
+                        
                                 <div class="form-group">
                                     <label for="name">First name:</label>
                                     <input type="text" class="form-control" name="First name" id="Firstname" placeholder="First name" required>
@@ -113,9 +112,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            <button type="submit" id="CrearUsuario" class="btn btn-primary">Create</button>
-                        </Form>
-
+                            <button type="" id="CrearUsuario" class="btn btn-primary">Create</button>
+                        
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -125,22 +124,8 @@
             </div>
         </div>
 
-        
+     
    <script>
-    /*
-        $(document).ready(function () {
-            $("#ButtonAddUser").click(function () {
-                $("ol").append("<li><div class='UserInterface'><div class='containerUserInterface'><div class='containerName'>nombre</div><div class='containerButtonEdit'><button id='ButtonEditUser' class='btn btn-warning'><span class='glyphicon glyphicon-pencil' id='PencilIcon'></span>Edit</button></div></div></div></li>");
-            });
-
-            
-            
-            $(this).click(function () {
-                alert(this);
-            });
-        });
-    */  
-
         function download(filename, text) {
                 var element = document.createElement('a');
                 element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -154,35 +139,36 @@
                 document.body.removeChild(element);
             }
 
-            // Start file download.
+            
             document.getElementById("CrearUsuario").addEventListener("click", function () {
-                // Generate download of hello.txt file with some content
+                
                 var Fristname = document.getElementById("Firstname").value;
                 var Lastname = document.getElementById("Lastname").value;
                 var Email = document.getElementById("Email").value;
                 var Username = document.getElementById("Username").value;
-                var Administrador = document.getElementById("Administrador").value; 
-                var Member = document.getElementById("Member").value;
-                var Contributor = document.getElementById("Contributor").value;
+                var Administrador = $("input[type='checkbox'][name=Administrador]:checked").val();
+                var Member = $("input[type='checkbox'][name=Member]:checked").val();
+                var Contributor = $("input[type='checkbox'][name=Contributor]:checked").val();
                 var yes = $("input[type='radio'][name=Yes]:checked").val();
                 var no = $("input[type='radio'][name=No]:checked").val();
                 var Role;
                 var Active;
                 
-                /*if (Administrador.checked == true) {
-                    Role = "Administrador";   
+                if (Administrador == undefined && Member==undefined && Contributor==undefined) {
+                    alert("Please select anything");
                 } else {
-                    if (Member.checked == true) {
-                        Role = "Member";
+                    if (Administrador == 'Administrador') {
+                        Role = Administrador;
                     } else {
-                        if (Contributor.checked == true) {
-                            Role = "Contributor"
+                        if (Member == 'Member') {
+                            Role = Member;
                         } else {
-                            alert("Please select anything")
-                        }      
+                            if (Contributor == 'Contributor') {
+                                Role = Contributor;
+                            }
+                        }
                     }
-                }*/
-                
+                }
 
                 if (yes == undefined && no == undefined) {
                     alert("Please select anything");
@@ -194,19 +180,33 @@
                             Active = no;
                         }
                     }
-                } 
+                }
+                var NombreCompleto = Fristname+' '+Lastname; 
                 var text = Fristname + ',' + Lastname + ',' + Email + ',' + Username + ',' + Role+','+Active+',';
                 var filename = "Lista de usuarios.txt"; 
                  
+                if( Fristname!= "" && Lastname!="" && Email!="" && Username!="" && Active!=undefined && Role != undefined){
                 
-                download(filename, text);              
-
+                download(filename, text);
+                $("ol").append("<li><div class='UserInterface'><div class='containerUserInterface'><div class='containerName'>" + NombreCompleto + "</div><div class='containerButtonEdit'><button id='ButtonEditUser' class='btn btn-warning'><span class='glyphicon glyphicon-pencil' id='PencilIcon'></span>Edit</button></div></div></div></li>");
+                $("#Firstname").val("");
+                $("#Lastname").val("");
+                $("#Email").val("");
+                $("#Username").val("");
+                Administrador.checked = false;
+                Member.checked = false;
+                Contributor.checked = false;
+                yes.checked = false;
+                no.checked = false;
+                }else{
+                    alert("Please complete all information");
+                }
                 
             }, false);
        
 
     </script>
-
-
+    <script src="./JS/LeerArchivo.js"></script>
+    
 </body>
 </html>
